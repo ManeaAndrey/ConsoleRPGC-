@@ -92,6 +92,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -142,22 +143,24 @@
     <ClCompile Include="ConsoleRPGC++.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Goblin.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="Orc.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneFunctions.cpp" />
     <ClCompile Include="Thief.cpp" />
-    <ClCompile Include="Warrior.cpp" />
-    <ClCompile Include="Wizard.cpp" />
+    <ClCompile Include="Alchemist.cpp" />
+    <ClCompile Include="Priest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Goblin.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="Orc.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SceneFunctions.h" />
     <ClInclude Include="Thief.h" />
-    <ClInclude Include="Warrior.h" />
-    <ClInclude Include="Wizard.h" />
+    <ClInclude Include="Alchemist.h" />
+    <ClInclude Include="Priest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

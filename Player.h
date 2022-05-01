@@ -10,6 +10,7 @@ public:
 	std::string getPlayerName() {
 		return m_PlayerName;
 	}
+	virtual ~Player();
 	
 
 protected:
