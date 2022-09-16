@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -141,24 +141,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleRPGC++.cpp" />
-    <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="Goblin.cpp" />
+    <ClCompile Include="Dialogue.cpp" />
     <ClCompile Include="Item.cpp" />
-    <ClCompile Include="Orc.cpp" />
+    <ClCompile Include="NPC.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneFunctions.cpp" />
-    <ClCompile Include="Thief.cpp" />
     <ClCompile Include="Alchemist.cpp" />
     <ClCompile Include="Priest.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Enemy.h" />
-    <ClInclude Include="Goblin.h" />
+    <ClInclude Include="Dialogue.h" />
     <ClInclude Include="Item.h" />
-    <ClInclude Include="Orc.h" />
+    <ClInclude Include="NPC.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SceneFunctions.h" />
-    <ClInclude Include="Thief.h" />
     <ClInclude Include="Alchemist.h" />
     <ClInclude Include="Priest.h" />
   </ItemGroup>

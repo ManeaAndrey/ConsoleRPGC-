@@ -21,22 +21,10 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Alchemist.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Priest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Orc.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Goblin.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Thief.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SceneFunctions.cpp">
@@ -45,12 +33,18 @@
     <ClCompile Include="Item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="NPC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialogue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Alchemist.h">
@@ -59,19 +53,19 @@
     <ClInclude Include="Priest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Orc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Goblin.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Thief.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SceneFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NPC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialogue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

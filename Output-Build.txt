@@ -1,5 +1,7 @@
 ﻿Build started...
 1>------ Build started: Project: ConsoleRPGC++, Configuration: Debug Win32 ------
 1>ConsoleRPGC++.cpp
-1>ConsoleRPGC++.vcxproj -> C:\Users\Andrei\source\repos\ConsoleRPGC++\Debug\ConsoleRPGC++.exe
+1>Priest.cpp
+1>Generating Code...
+1>ConsoleRPGC++.vcxproj -> E:\Visual studio repos\ConsoleRPGC++\Debug\ConsoleRPGC++.exe
 ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

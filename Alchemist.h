@@ -1,14 +1,17 @@
 #pragma once
 #include "Player.h"
 class Alchemist :
-   virtual public Player
+    public Player
 {
 public:
-	Alchemist(int Health, int AttackPower);
+	
+	Alchemist();
 	~Alchemist();
-	 int m_Health;
-	 int m_AttackPower;
+	 void setHealth(int Health);
+	
+	 std::vector<Item*> CreateInventory();
 
+	 void Scene1();
 
 };
 

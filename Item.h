@@ -40,9 +40,9 @@ public:
 
 protected:
 	std::string ItemName;
-	int ItemID;
-	int m_damage;
-	int m_defense;
+	int ItemID=00;
+	int m_damage=00;
+	int m_defense=00;
 	std::string ItemDescription;
 
 };

@@ -4,6 +4,8 @@
 #include<string>
 #include<vector>
 #include"Item.h"
+#include"Player.h"
+#include"NPC.h"
 
 void Title();
 void PlaysoundIntro();
@@ -12,8 +14,8 @@ void Continue();
 bool ChoseClass();
 void Playsound1();
 void Playsound2();
-int ChoseDirection(std::string PlayerName);
-std::vector<Item*> CreatePriestInventory();
-std::vector<Item*> CreateAlchemistInventory();
-void ShowInventory(std::vector<Item*>Inventar);
+char ChoseDirection(std::string PlayerName);
+void CreateAlchemistMasterNPC(NPC* AlchemistMaster);
+void Failed();
+void Continue();
 

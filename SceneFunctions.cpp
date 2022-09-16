@@ -15,7 +15,9 @@ void Title()
 
 bool Intro()
 {
-	bool input;
+	bool start = true;
+	char input;
+	do {
 	std::cout << R"(A moonless night descends upon the remote village of Kulm.
 
 With a colossal mountain range at its back and an ancient forest encircling the rest of it, the already remote village is completely isolated from the rest of the empire.
@@ -35,16 +37,26 @@ As the rider delves deeper into the forest, the village returns to silence outwa
 	std::cout << "\n";
 	std::cout << "Embark on that Journey ?\n";
 	std::cout << "Press 1 for 'Yes' and 0 for 'No'\n";
-	std::cin >> input;
-	return input;
+	std::cin >> input;	
+		switch (input) {
+		case'0':start = 0;
+			break;
+		case'1':start = 1;
+			break;
+		default:std::cout << "Invalid choice, try again.";
+		}
+	} while (!(input == '0') && !(input == '1'));
+	return start;
 }
 
 bool ChoseClass()
 {
-	bool input;
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << R"(Priest of the Hawk:
+	bool PlayerClass=true;
+	char input;
+	do {
+		std::cout << "\n";
+		std::cout << "\n";
+		std::cout << R"(Priest of the Hawk:
 There are countless religions in the empire and while the Church of the Hawk is its newest faith the speed at which the newly formed cult expands is unprecedented in known history.
 The Church owes its rapid rise in popularity to a single event seven years ago dubbed "the Awakening", a vision shared simultaneously by every citizen in the empire or if the Holy Hawk priesthood is to be believed, the world.
 In this vision, the figure that will be known as the Hawk appears like a beautiful knight in alabaster white armor and wings of pure light in the midst of an all encroaching darkness. 
@@ -56,11 +68,11 @@ As unusual as the birth of the new religion is so are its Priests. The figure of
 As opposed to most priests of other cults the Hawk's order are trained in combat and armed with the rapier, the weapon of choice the Hawk wielded during the Awakening.
 They travel the land not to spread the word of their God, that mission meaningless after the Awakening, but to follow its example, to protect, to lead, and ultimately save.
 Be it settling a feud of two families or leading a village defense against a gang of bandits the Priests of the Hawk will nobly serve mankind until the King-God arrives to take its rightful place.)" << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << R"(Royal Alchemist:
+		std::cout << "\n";
+		std::cout << "\n";
+		std::cout << "\n";
+		std::cout << "\n";
+		std::cout << R"(Royal Alchemist:
 The prestigious Royal Academy resides in the city of Weissenburg and while the Palace of Roderick the third, is the greatest structure in the city, few would contest the Academy is the most important.
 While more masters were created in the halls of the famous institution than in any other place of learning that alone is not the reason for its legendary status. 
 The monolithic structure known by most only as "the Academy" is the only place in the empire one can aspire to become an Alchemist. 
@@ -75,12 +87,21 @@ Eager to take advantage of the unique mix of youthful strength and knowledge of 
 Though not trained for combat any rogue seeing nothing but an easy prey in the bookworms on their travels is in for a rude awakening.      
 Far from harmless the young men and women carry besides their ceremonial Alchemist knife a wide array of mixtures from the poisonous to the explosive.
 Impatient to make their contribution the Alchemists dive into the dangerous waters of the unknown time and time again, risking life and limb to bring back a morsel of knowledge to their mentors.)" << "\n";
-	std::cout << "\n";
-	std::cout << "\n";
-	std::cout << "Chose your Character:\n";
-	std::cout << "Press '0' for the Royal Alchemist and '1' for the Priest of the Hawk\n";
-	std::cin >> input;
-	return input;  
+		std::cout << "\n";
+		std::cout << "\n";
+		std::cout << "Chose your Character:\n";
+		std::cout << "Press '0' for the Royal Alchemist and '1' for the Priest of the Hawk\n";
+		std::cin >> input;
+		switch (input) {
+		case'0':PlayerClass = 0;
+			break;
+		case'1':PlayerClass = 1;
+			break;
+		default:std::cout << "Invalid choice, try again.";
+		}
+		
+	} while (!(input == '0') && !(input == '1'));
+	return PlayerClass;
 }
 
 void PlaysoundIntro()
@@ -103,16 +124,12 @@ void Playsound2()
 	
 }
 
-void Continue() {
-	std::cout << "Press Enter to Continue";
-	std::cin.ignore();
-	
-}
 
 
-int ChoseDirection(std::string PlayerName)
+
+char ChoseDirection(std::string PlayerName)
 {
-	int input;
+	char input;
 	do
 	{
 		std::cout << "You're at a crossroad, the road splits in three. Chose your destination:\n";
@@ -122,98 +139,102 @@ int ChoseDirection(std::string PlayerName)
 		std::cin >> input;
 		
 		switch (input) {
-		case 1:
+		case '1':
 			std::cout << PlayerName << " Travels to the Mountain\n";
 			break;
-		case 2:
+		case '2':
 			std::cout << PlayerName << " Travels to the Forrest\n";
 			break;
-		case 3:
+		case '3':
 			std::cout << PlayerName << " Travels to the City\n";
 			break;
 		default:
 			std::cout << "Invalid choice, try again\n";
 		}
-	} while (!(input==1)&&!(input==2)&&!(input==3));
+	} while (!(input=='1')&&!(input=='2')&&!(input=='3'));
 	return input;
 }
 
-std::vector<Item*> CreatePriestInventory() {
-	std::vector<Item*> Inventar;
-	Item* I1 = new Item();
-	std::string I1Description;
-	I1->setDamage(0);
-	I1->setDefense(10);
-	I1->setItemName("Robe of the Hawk");
-	I1->setItemDescription(I1Description);
-	Inventar.push_back(I1);
+void CreateAlchemistMasterNPC(NPC* AlchemistMaster) {
+	std::string Name = "Master Ludwig";
+	AlchemistMaster->setNpcName(Name);
+	std::string Intro="Why do you bother me, aprentice?";
+	std::string Outro="Get back to your work!";
+	AlchemistMaster->setIntro(Intro);
+	AlchemistMaster->setOutro(Outro);
+	std::string description = "A tall and gaunt man with a permanent frown plastered on his wrinkly face.";
+	std::vector<std::vector<std::string>> dialogue = { { "0-What is your role here?","1-Can you help me with this recipe?","2-Tell me more about the Pilgrimage","3-Goodbye master"},
+	{"Testing the dialogue","Aw heeel naw!","didn't you read the intro ?"}};
+	AlchemistMaster->setdialogue(dialogue);
 
-	Item* I2 = new Item();
-	std::string I2Description;
-	I2->setDamage(0);
-	I2->setDefense(10);
-	I2->setItemName("Chainmail");
-	I2->setItemDescription(I2Description);
-	Inventar.push_back(I2);
 
-	Item* I3 = new Item();
-	std::string I3Description;
-	I3->setDamage(20);
-	I3->setDefense(0);
-	I3->setItemName("Iron Rapier");
-	I3->setItemDescription(I3Description);
-	Inventar.push_back(I3);
-	return Inventar;
 }
-
-std::vector<Item*> CreateAlchemistInventory() {
-	std::vector<Item*> Inventar;
-	Item* I1 = new Item();
-	std::string I1Description;
-	I1->setDamage(0);
-	I1->setDefense(10);
-	I1->setItemName("Alchemist Garb");
-	I1->setItemDescription(I1Description);
-    Inventar.push_back(I1);
-
-	Item* I2 = new Item();
-	std::string I2Description;
-	I2->setDamage(5);
-	I2->setDefense(0);
-	I2->setItemName("Cermonial Knife");
-	I2->setItemDescription(I2Description);
-	Inventar.push_back(I2);
-
-	Item* I3 = new Item();
-	std::string I3Description;
-	I3->setDamage(100);
-	I3->setDefense(0);
-	I3->setItemName("Explosive Mixture");
-	I3->setItemDescription(I3Description);
-	Inventar.push_back(I3);
-
-	Item* I4 = new Item();
-	std::string I4Description;
-	I4->setDamage(0);
-	I4->setDefense(0);
-	I4->setItemName("Concentrated Poison");
-	I4->setItemDescription(I4Description);
-	Inventar.push_back(I4);
-
-	Item* I5 = new Item();
-	std::string I5Description;
-	I5->setDamage(0);
-	I5->setDefense(0);
-	I5->setItemName("Healing Salve");
-	I5->setItemDescription(I5Description);
-	Inventar.push_back(I5);
-	return Inventar;
-}
-
-
-void ShowInventory(std::vector<Item*>Inventar) {
+void Continue() {
 	
-	for (auto& Item : Inventar) {
-		std::cout<<" "<<Item->getItemName()<<"\n";
-	}
+	std::cout << "Press Enter to continue: ";
+	std::cin.get();
+	std::cin.ignore();
 }
+
+void Failed()
+{
+
+	std::cout << R"(
+                                      (`-')  _    (`-')  (`-')  _     _(`-')    (`-')  _(`-')  _ _(`-')       ,---.    
+     .->        .->        .->        (OO ).-/ <-.(OO )  ( OO).-/    ( (OO ).-> ( OO).-/(OO ).-/( (OO ).->    |   |    
+ ,--.'  ,-.(`-')----. ,--.(,--.       / ,---.  ,------,)(,------.     \    .'_ (,------./ ,---.  \    .'_     |   |    
+(`-')'.'  /( OO).-.  '|  | |(`-')     | \ /`.\ |   /`. ' |  .---'     '`'-..__) |  .---'| \ /`.\ '`'-..__)    |   |    
+(OO \    / ( _) | |  ||  | |(OO )     '-'|_.' ||  |_.' |(|  '--.      |  |  ' |(|  '--. '-'|_.' ||  |  ' |    |  .'    
+ |  /   /)  \|  |)|  ||  | | |  \    (|  .-.  ||  .   .' |  .--'      |  |  / : |  .--'(|  .-.  ||  |  / :    `--'     
+ `-/   /`    '  '-'  '\  '-'(_ .'     |  | |  ||  |\  \  |  `---.     |  '-'  / |  `---.|  | |  ||  '-'  /    .--.     
+   `--'       `-----'  `-----'        `--' `--'`--' '--' `------'     `------'  `------'`--' `--'`------'     `--')" << "\n";
+ std::cout << R"(
+                 ___-----------___
+           __--~~                 ~~--__
+       _-~~                             ~~-_
+    _-~                                     ~-_
+   /                                           \
+  |                                             |
+ |                                               |
+ |                                               |
+|                                                 |
+|                                                 |
+|                                                 |
+ |                                               |
+ |  |    _-------_               _-------_    |  |
+ |  |  /~         ~\           /~         ~\  |  |
+  ||  |             |         |             |  ||
+  || |               |       |               | ||
+  || |              |         |              | ||
+  |   \_           /           \           _/   |
+ |      ~~--_____-~    /~V~\    ~-_____--~~      |
+ |                    |     |                    |
+|                    |       |                    |
+|                    |  /^\  |                    |
+ |                    ~~   ~~                    |
+  \_         _                       _         _/
+    ~--____-~ ~\                   /~ ~-____--~
+         \     /\                 /\     /
+          \    | ( ,           , ) |    /
+           |   | (~(__(  |  )__)~) |   |
+            |   \/ (  (~~|~~)  ) \/   |
+             |   |  [ [  |  ] ]  /   |
+              |                     |
+               \                   /
+                ~-_             _-~
+                   ~--___-___--~)" << "\n";
+ std::cout << std::endl;
+ std::cout << std::endl;
+ std::cout << std::endl;
+
+	Continue();
+	exit(1);
+
+}
+
+
+
+
+
+
+

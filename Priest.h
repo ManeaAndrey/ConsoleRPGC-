@@ -4,12 +4,15 @@ class Priest :
    virtual public Player
 {
 public:
-	Priest(int Health, int AttackPower);
+	
+	Priest();
 	~Priest();
-	int m_Health;
-	int m_AttackPower;
-
-
+	void setHealth(int Health);
+	
+	std::vector<Item*> CreateInventory();
+	
+	
+	
 
 };
 
